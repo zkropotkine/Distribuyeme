@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA079515183F361500834ED4 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA079514183F361500834ED4 /* MapKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		DA6CAAFE1805110700FB38CC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA6CAAFD1805110700FB38CC /* Foundation.framework */; };
 		DA6CAB001805110700FB38CC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA6CAAFF1805110700FB38CC /* CoreGraphics.framework */; };
 		DA6CAB021805110700FB38CC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA6CAB011805110700FB38CC /* UIKit.framework */; };
@@ -21,6 +22,7 @@
 		DA6CAB1F1805110700FB38CC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA6CAB011805110700FB38CC /* UIKit.framework */; };
 		DA6CAB271805110700FB38CC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA6CAB251805110700FB38CC /* InfoPlist.strings */; };
 		DA6CAB291805110700FB38CC /* distribuyemeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DA6CAB281805110700FB38CC /* distribuyemeTests.m */; };
+		DA6CAB331805126500FB38CC /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA6CAB321805126500FB38CC /* Entitlements.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DA079514183F361500834ED4 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		DA6CAAFA1805110700FB38CC /* distribuyeme.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = distribuyeme.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA6CAAFD1805110700FB38CC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DA6CAAFF1805110700FB38CC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -53,6 +56,7 @@
 		DA6CAB241805110700FB38CC /* distribuyemeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "distribuyemeTests-Info.plist"; sourceTree = "<group>"; };
 		DA6CAB261805110700FB38CC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DA6CAB281805110700FB38CC /* distribuyemeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = distribuyemeTests.m; sourceTree = "<group>"; };
+		DA6CAB321805126500FB38CC /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,7 @@
 			files = (
 				DA6CAB001805110700FB38CC /* CoreGraphics.framework in Frameworks */,
 				DA6CAB021805110700FB38CC /* UIKit.framework in Frameworks */,
+				DA079515183F361500834ED4 /* MapKit.framework in Frameworks */,
 				DA6CAAFE1805110700FB38CC /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -101,6 +106,7 @@
 		DA6CAAFC1805110700FB38CC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DA079514183F361500834ED4 /* MapKit.framework */,
 				DA6CAAFD1805110700FB38CC /* Foundation.framework */,
 				DA6CAAFF1805110700FB38CC /* CoreGraphics.framework */,
 				DA6CAB011805110700FB38CC /* UIKit.framework */,
@@ -130,6 +136,7 @@
 				DA6CAB061805110700FB38CC /* InfoPlist.strings */,
 				DA6CAB091805110700FB38CC /* main.m */,
 				DA6CAB0B1805110700FB38CC /* distribuyeme-Prefix.pch */,
+				DA6CAB321805126500FB38CC /* Entitlements.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -199,6 +206,17 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Daniel Rodriguez";
 				TargetAttributes = {
+					DA6CAAF91805110700FB38CC = {
+						DevelopmentTeam = YEG548UG49;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.iOS = {
+								enabled = 1;
+							};
+						};
+					};
 					DA6CAB1A1805110700FB38CC = {
 						TestTargetID = DA6CAAF91805110700FB38CC;
 					};
@@ -228,6 +246,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA6CAB331805126500FB38CC /* Entitlements.plist in Resources */,
 				DA6CAB161805110700FB38CC /* Images.xcassets in Resources */,
 				DA6CAB081805110700FB38CC /* InfoPlist.strings in Resources */,
 				DA6CAB111805110700FB38CC /* Main.storyboard in Resources */,
@@ -378,10 +397,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "distribuyeme/distribuyeme-Prefix.pch";
 				INFOPLIST_FILE = "distribuyeme/distribuyeme-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -391,10 +414,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				"CODE_SIGN_ENTITLEMENTS[sdk=*]" = "$(SRCROOT)/$(TARGET_NAME)/Entitlements.plist";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "distribuyeme/distribuyeme-Prefix.pch";
 				INFOPLIST_FILE = "distribuyeme/distribuyeme-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -460,6 +488,7 @@
 				DA6CAB2E1805110700FB38CC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DA6CAB2F1805110700FB38CC /* Build configuration list for PBXNativeTarget "distribuyemeTests" */ = {
 			isa = XCConfigurationList;
@@ -468,6 +497,7 @@
 				DA6CAB311805110700FB38CC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -17,13 +17,50 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    
+    self.view.backgroundColor = [UIColor whiteColor];
+    self.mapView.showsUserLocation = YES;
+    self.mapView.delegate = self;
+    
+    
+    /* Create a map as big as our view */
+    //self.mapView = [[MKMapView alloc]
+                    //initWithFrame:self.view.bounds];
+    
+    
+    //self.myMapView.delegate = self;
+    /* Set the map type to Standard */
+    //self.mapView.mapType = MKMapTypeStandard;
+    self.mapView.showsUserLocation = YES;
+    MKCoordinateRegion region =
+    MKCoordinateRegionMakeWithDistance (self.mapView.userLocation.location.coordinate, 1500, 1500);
+    
+    //self.mapView.autoresizingMask =
+   // UIViewAutoresizingFlexibleWidth |
+    //UIViewAutoresizingFlexibleHeight;
+    
+    /* Add it to our view */
+    //[self.view addSubview:self.mapView];
+    [self.mapView setRegion:region animated:NO];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
+{
+    self.mapView.centerCoordinate = userLocation.location.coordinate;
+}
+
+- (void) refreshMapButtonIsPressed:(UIButton *) paramSender {
+    NSLog(@"Button is pressed.");
+}
+
+- (void) buttonIsTapped:(UIButton *)paramSender{
+    NSLog(@"Button is tapped.");
 }
 
 @end
