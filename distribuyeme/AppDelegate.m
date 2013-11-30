@@ -19,6 +19,10 @@
      UIRemoteNotificationTypeBadge |
      UIRemoteNotificationTypeSound];
     
+    NSDictionary *remoteNotif = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
+    
+     NSLog(@"RemoteNot: %@", remoteNotif);
+    
    // self.window = [[UIWindow alloc]
                    //initWithFrame:[[UIScreen mainScreen] bounds]];
     //self.window.backgroundColor = [UIColor whiteColor];
@@ -85,7 +89,65 @@
 - (void)application:(UIApplication*)application didReceiveRemoteNotification:(NSDictionary*)userInfo
 {
     NSLog(@"==========Received notification: %@", userInfo);
-
+    
+    NSDictionary *apsInfo = [userInfo objectForKey:@"aps"];
+    
+    NSString *alertMsg = [apsInfo objectForKey:@"alert"];
+    
+    NSArray* dateArray = [alertMsg componentsSeparatedByString: @"/"];
+    
+    float latitud  = [[dateArray objectAtIndex: 0] floatValue];
+    float longitud = [[dateArray objectAtIndex: 1] floatValue];
+    
+    
+    CLLocationCoordinate2D newcordinate = CLLocationCoordinate2DMake(latitud, longitud);
+    
+    
+    UIAlertView *alert =
+    [[UIAlertView alloc] initWithTitle:nil
+                               message:@"Handling the local notification"
+                              delegate:nil
+                     cancelButtonTitle:@"OK"
+                     otherButtonTitles:nil];
+    [alert show];
+    
+    
+    
+    [self.myViewController myMethodHere:newcordinate];
 }
+
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
+{
+    NSLog(@"==========Received notification:2 %@", userInfo);
+    
+    NSDictionary *apsInfo = [userInfo objectForKey:@"aps"];
+    
+    NSString *alertMsg = [apsInfo objectForKey:@"alert"];
+    
+    NSArray* dateArray = [alertMsg componentsSeparatedByString: @"/"];
+    
+    float latitud  = [[dateArray objectAtIndex: 0] floatValue];
+    float longitud = [[dateArray objectAtIndex: 1] floatValue];
+    
+    
+    CLLocationCoordinate2D newcordinate = CLLocationCoordinate2DMake(latitud, longitud);
+    
+    
+    /*UIAlertView *alert =
+    [[UIAlertView alloc] initWithTitle:nil
+                               message:@"Handling the local notification"
+                              delegate:nil
+                     cancelButtonTitle:@"OK"
+                     otherButtonTitles:nil];
+    [alert show];*/
+    
+    
+    
+    [self.myViewController myMethodHere:newcordinate];
+    
+    completionHandler(UIBackgroundFetchResultNewData);
+}
+
 
 @end

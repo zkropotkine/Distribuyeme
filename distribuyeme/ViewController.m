@@ -33,11 +33,16 @@
     //self.mapView.mapType = MKMapTypeStandard;
     self.mapView.showsUserLocation = YES;
     MKCoordinateRegion region =
-    MKCoordinateRegionMakeWithDistance (self.mapView.userLocation.location.coordinate, 1500, 1500);
+    MKCoordinateRegionMakeWithDistance (self.mapView.userLocation.location.coordinate, 15000, 15000);
+    
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    appDelegate.myViewController = self;
     
     //self.mapView.autoresizingMask =
    // UIViewAutoresizingFlexibleWidth |
     //UIViewAutoresizingFlexibleHeight;
+    
+    
     
     /* Add it to our view */
     //[self.view addSubview:self.mapView];
@@ -62,5 +67,20 @@
 - (void) buttonIsTapped:(UIButton *)paramSender{
     NSLog(@"Button is tapped.");
 }
+
+-(void) myMethodHere:(CLLocationCoordinate2D) location{
+    NSLog(@"Willy");
+    
+    
+    [self.mapView removeAnnotations:[self.mapView annotations]];
+    /* Create the annotation using the location */
+    MyAnnonation *annotation =
+    [[MyAnnonation alloc] initWithCoordinates:location
+                                        title:@"My Title"
+                                     subTitle:@"My Sub Title"];
+    
+    [self.mapView addAnnotation:annotation];
+}
+
 
 @end

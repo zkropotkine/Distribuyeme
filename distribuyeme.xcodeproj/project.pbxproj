@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DA079515183F361500834ED4 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA079514183F361500834ED4 /* MapKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		DA130C721849CA8000998A92 /* MyAnnonation.m in Sources */ = {isa = PBXBuildFile; fileRef = DA130C711849CA8000998A92 /* MyAnnonation.m */; };
 		DA6CAAFE1805110700FB38CC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA6CAAFD1805110700FB38CC /* Foundation.framework */; };
 		DA6CAB001805110700FB38CC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA6CAAFF1805110700FB38CC /* CoreGraphics.framework */; };
 		DA6CAB021805110700FB38CC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA6CAB011805110700FB38CC /* UIKit.framework */; };
@@ -37,6 +38,8 @@
 
 /* Begin PBXFileReference section */
 		DA079514183F361500834ED4 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		DA130C701849CA6B00998A92 /* MyAnnonation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MyAnnonation.h; path = ../../../../../Documents/WORK/iPhone/Leyenda/Leyenda/MyAnnonation.h; sourceTree = "<group>"; };
+		DA130C711849CA8000998A92 /* MyAnnonation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyAnnonation.m; path = ../../../../../Documents/WORK/iPhone/Leyenda/Leyenda/MyAnnonation.m; sourceTree = "<group>"; };
 		DA6CAAFA1805110700FB38CC /* distribuyeme.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = distribuyeme.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA6CAAFD1805110700FB38CC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DA6CAAFF1805110700FB38CC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -121,6 +124,8 @@
 				DA6CAB0C1805110700FB38CC /* AppDelegate.h */,
 				DA6CAB0D1805110700FB38CC /* AppDelegate.m */,
 				DA6CAB0F1805110700FB38CC /* Main.storyboard */,
+				DA130C711849CA8000998A92 /* MyAnnonation.m */,
+				DA130C701849CA6B00998A92 /* MyAnnonation.h */,
 				DA6CAB121805110700FB38CC /* ViewController.h */,
 				DA6CAB131805110700FB38CC /* ViewController.m */,
 				DA6CAB151805110700FB38CC /* Images.xcassets */,
@@ -268,6 +273,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA130C721849CA8000998A92 /* MyAnnonation.m in Sources */,
 				DA6CAB141805110700FB38CC /* ViewController.m in Sources */,
 				DA6CAB0E1805110700FB38CC /* AppDelegate.m in Sources */,
 				DA6CAB0A1805110700FB38CC /* main.m in Sources */,
